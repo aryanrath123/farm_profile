@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile | AgriConnect</title>
+    <title>Profile_AgriConnect</title>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
@@ -47,58 +47,33 @@
             <button class="btn-save" id="saveButton">Save</button>
           </div>
         </header>
-        <form id="profileForm"> <!-- Added form to wrap inputs -->
-          <section class="account-edit">
+        <section class="account-edit">
+          <form id="profileForm">
             <div class="input-container">
               <label for="first-name">First Name</label>
-              <input
-                type="text"
-                id="first-name"
-                name="firstName"
-                placeholder="First Name"
-              />
+              <input type="text" id="first-name" placeholder="First Name" />
             </div>
             <div class="input-container">
               <label for="last-name">Last Name</label>
-              <input
-                type="text"
-                id="last-name"
-                name="lastName"
-                placeholder="Last Name"
-              />
+              <input type="text" id="last-name" placeholder="Last Name" />
             </div>
-          </section>
-          <section class="account-edit">
-            <div class="input-container">
-              <label for="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Email"
-              />
-            </div>
-            <div class="input-container">
-              <label for="phone">Phone Number</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                placeholder="Phone Number"
-              />
-            </div>
-          </section>
-          <section class="account-edit">
-            <div class="input-container">
-              <label for="address">Address</label>
-              <textarea
-                id="address"
-                name="address"
-                placeholder="Enter your address"
-              ></textarea>
-            </div>
-          </section>
-        </form>
+        </section>
+        <section class="account-edit">
+          <div class="input-container">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Email" />
+          </div>
+          <div class="input-container">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="Phone Number" />
+          </div>
+        </section>
+        <section class="account-edit">
+          <div class="input-container">
+            <label for="address">Address</label>
+            <textarea id="address" placeholder="Enter your address"></textarea>
+          </div>
+        </section>
       </main>
     </div>
     <script src="script.js"></script>
