@@ -1,65 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile_AgriConnect</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile | AgriConnect</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
-        <aside class="profile">
-            <div class="profile-header">
-                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile" class="profile-img">
-                <div>
-                    <h1 class="profile-title">Profile</h1>
-                    <p class="profile-email">soujanyapandia@gmail.com</p>
-                </div>
+      <aside class="profile">
+        <div class="profile-header">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+            alt="Profile"
+            class="profile-img"
+          />
+          <div>
+            <h1 class="profile-title">Profile</h1>
+            <p class="profile-email">soujanyapandia@gmail.com</p>
+          </div>
+        </div>
+        <nav class="menu">
+          <a href="#" class="menu-link"
+            ><i class="fa-solid fa-circle-user"></i> Account</a
+          >
+          <a href="#" class="menu-link"
+            ><i class="fa-solid fa-bell"></i> Notifications</a
+          >
+          <a href="#" class="menu-link"
+            ><i class="fa-solid fa-gear"></i> Settings</a
+          >
+          <a href="#" class="menu-link"
+            ><i class="fa-solid fa-right-from-bracket"></i> Logout</a
+          >
+        </nav>
+      </aside>
+      <main class="account">
+        <header class="account-header">
+          <h1>Account Settings</h1>
+          <div class="btn-container">
+            <button class="btn-cancel">Cancel</button>
+            <button class="btn-save" id="saveButton">Save</button>
+          </div>
+        </header>
+        <form id="profileForm"> <!-- Added form to wrap inputs -->
+          <section class="account-edit">
+            <div class="input-container">
+              <label for="first-name">First Name</label>
+              <input
+                type="text"
+                id="first-name"
+                name="firstName"
+                placeholder="First Name"
+              />
             </div>
-            <nav class="menu">
-                <a href="#" class="menu-link"><i class="fa-solid fa-circle-user"></i> Account</a>
-                <a href="#" class="menu-link"><i class="fa-solid fa-bell"></i> Notifications</a>
-                <a href="#" class="menu-link"><i class="fa-solid fa-gear"></i> Settings</a>
-                <a href="#" class="menu-link"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
-            </nav>
-        </aside>
-        <main class="account">
-            <header class="account-header">
-                <h1>Account Settings</h1>
-                <div class="btn-container">
-                    <button class="btn-cancel">Cancel</button>
-                    <button class="btn-save">Save</button>
-                </div>
-            </header>
-            <section class="account-edit">
-                <div class="input-container">
-                    <label for="first-name">First Name</label>
-                    <input type="text" id="first-name" placeholder="First Name">
-                </div>
-                <div class="input-container">
-                    <label for="last-name">Last Name</label>
-                    <input type="text" id="last-name" placeholder="Last Name">
-                </div>
-            </section>
-            <section class="account-edit">
-                <div class="input-container">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Email">
-                </div>
-                <div class="input-container">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" placeholder="Phone Number">
-                </div>
-            </section>
-            <section class="account-edit">
-                <div class="input-container">
-                    <label for="address">Address</label>
-                    <textarea id="address" placeholder="Enter your address"></textarea>
-                </div>
-            </section>
-        </main>
+            <div class="input-container">
+              <label for="last-name">Last Name</label>
+              <input
+                type="text"
+                id="last-name"
+                name="lastName"
+                placeholder="Last Name"
+              />
+            </div>
+          </section>
+          <section class="account-edit">
+            <div class="input-container">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+              />
+            </div>
+            <div class="input-container">
+              <label for="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Phone Number"
+              />
+            </div>
+          </section>
+          <section class="account-edit">
+            <div class="input-container">
+              <label for="address">Address</label>
+              <textarea
+                id="address"
+                name="address"
+                placeholder="Enter your address"
+              ></textarea>
+            </div>
+          </section>
+        </form>
+      </main>
     </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
