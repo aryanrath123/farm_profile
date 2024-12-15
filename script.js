@@ -1,57 +1,46 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Add an event listener to the Save button
-    const saveButton = document.querySelector('.btn-save'); // Use the correct class
-    const form = document.getElementById('profileForm'); // Reference the form element (add this ID in HTML)
-
-    if (saveButton) {
-        saveButton.addEventListener('click', async function () {
-            // Gather form data
-            const formData = new FormData(form);
-
-            // Convert form data to a JSON object
-            const farmerDetails = {};
-            formData.forEach((value, key) => {
-                farmerDetails[key] = value;
-            });
-
-            try {
-                // Simulate sending data to the server
-                const response = await fetch('http://127.0.0.1:5501/saveFarmer', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(farmerDetails),
-                });
-
-                if (response.ok) {
-                    alert('Farmer details saved successfully!');
-                    // Redirect to the main page
-                    window.location.href = 'http://127.0.0.1:5501/index.html';
-                } else {
-                    console.error('Failed to save farmer details:', await response.text());
-                    alert('Error: Unable to save farmer details. Please try again.');
-                }
-            } catch (error) {
-                console.error('Error occurred while saving details:', error);
-                alert('An error occurred. Please check your connection and try again.');
-            }
-        });
-    } else {
-        console.error('Save button not found!');
+// Function to populate the form with saved data from localStorage
+function populateForm() {
+    const savedDetails = JSON.parse(localStorage.getItem('farmerDetails'));
+  
+    if (savedDetails) {
+      // Populate form fields with saved data
+      document.getElementById('first-name').value = savedDetails['first-name'] || '';
+      document.getElementById('last-name').value = savedDetails['last-name'] || '';
+      document.getElementById('email').value = savedDetails['email'] || '';
+      document.getElementById('phone').value = savedDetails['phone'] || '';
+      document.getElementById('address').value = savedDetails['address'] || '';
     }
-
-    // Add an event listener to the Cancel button
-    const cancelButton = document.querySelector('.btn-cancel');
-    if (cancelButton) {
-        cancelButton.addEventListener('click', function () {
-            if (form) {
-                form.reset(); // Clear form fields
-            } else {
-                console.error('Form not found for reset!');
-            }
-        });
-    } else {
-        console.error('Cancel button not found!');
-    }
-});
+  }
+  
+  // Add an event listener to the Save button
+  document.getElementById('saveButton').addEventListener('click', function () {
+    // Get the form element
+    const form = document.getElementById('profileForm');
+  
+    // Create an object to hold the form data
+    const farmerDetails = {};
+  
+    // Get form data and save it into the farmerDetails object
+    new FormData(form).forEach((value, key) => {
+      farmerDetails[key] = value;
+    });
+  
+    // Save the data to localStorage
+    localStorage.setItem('farmerDetails', JSON.stringify(farmerDetails));
+  
+    // Show a confirmation message
+    alert('Farmer details saved locally!');
+  
+    // Redirect to the main page (can be updated to your desired redirect)
+    window.location.href = 'http://127.0.0.1:5501/index.html';
+  });
+  
+  // Optional: Handle the cancel button to reset the form
+  document.querySelector('.btn-cancel').addEventListener('click', function () {
+    // Clear the form fields
+    document.getElementById('profileForm').reset();
+  });
+  
+  // Call the populateForm function when the page is loaded to auto-fill the form with saved data
+  document.addEventListener('DOMContentLoaded', populateForm);
+  
